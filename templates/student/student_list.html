@@ -10,11 +10,21 @@
 <div class="section-body">
   <div class="card">
     <div class="card-header">
-      <h4>O‘quvchilar</h4>
-      <div class="card-header-action">
-        <a href="#" class="btn btn-primary">
-            <i class="bx bx-plus"></i> O'quvchi qo'shish
-        </a>
+      <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <h4>O‘quvchilar</h4>
+        <div class="d-flex align-items-center gap-3">
+          <form method="GET" action="" class="d-flex" role="search">
+            <input name="q" type="text" class="form-control me-3" placeholder="Ism orqali qidiruv..." style="width: 250px;">
+            <button class="btn btn-primary" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+          <div class="card-header-action" style="margin-left: 20px;">
+            <a href="" class="btn btn-primary">
+              <i class="bx bx-plus"></i> O'quvchi qo'shish
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
