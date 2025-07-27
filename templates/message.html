@@ -1,0 +1,36 @@
+{% load static %}
+{% if messages %}
+    {% for message in messages %}
+    <div class="custom-message-container col-12 col-md-3" style="display: none;">
+      <div class="alert alert-{{message.tags}} alert-dismissible show fade message_container-custom text-center mb-3">
+        <div class="alert-body">
+        <button class="close" data-dismiss="alert">
+          <span>&times;</span>
+        </button>
+        {% if message.tags == 'success' %}
+          <i class="ion-android-done"> </i>
+        {% elif message.tags == 'warning' %}
+          <i class="ion-alert"> </i>
+        {% endif %}
+
+          <span class="mx-1">{{ message }}</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      setTimeout(function() {
+        $('.custom-message-container').fadeIn(500).delay(2000).fadeOut(1000);
+      }, 500);
+    </script>
+  {% endfor %}
+{% endif %}
+
+<style>
+  .custom-message-container{
+    position: fixed;
+    z-index: 999;
+    top: 10px;
+    right: 10px;
+  }
+</style>

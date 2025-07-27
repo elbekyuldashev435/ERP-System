@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Dashboard{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+  <link rel="icon" href="{% static 'assets/img/favicon.ico' %}" type="image/x-icon" />
+
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <div class="loader"></div>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+
+      <!-- Navbar -->
+      {% include 'partials/_navbar.html' %}
+
+      <!-- Sidebar -->
+      {% include 'partials/_sidebar.html' %}
+
+      <!-- Main content -->
+      <div class="main-content">
+        <section class="section">
+          {% block content %}
+          {% endblock %}
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <div class="footer-left">
+          <a href="#">Education ERP</a>
+        </div>
+        <div class="footer-right"></div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="{% static 'assets/js/app.min.js' %}"></script>
+  <script src="{% static 'assets/bundles/jquery-ui/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="section-header">
+  <h1>Asosiy Boshqaruv</h1>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-primary">
+        <i class="fas fa-user-graduate"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>O‘quvchilar</h4>
+        </div>
+        <div class="card-body">
+          {{ students }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-success">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>O‘qituvchilar</h4>
+        </div>
+        <div class="card-body">
+          {{ teachers }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-info">
+        <i class="fas fa-users"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Guruhlar</h4>
+        </div>
+        <div class="card-body">
+          {{ groups }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-statistic-1">
+      <div class="card-icon bg-warning">
+        <i class="fas fa-money-bill-wave"></i>
+      </div>
+      <div class="card-wrap">
+        <div class="card-header">
+          <h4>Bugungi to‘lov</h4>
+        </div>
+        <div class="card-body">
+          {{ total_paid_today }} so'm
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

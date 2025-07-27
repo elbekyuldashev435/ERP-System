@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}O‘quvchilar ro‘yxati{% endblock %}
+
+{% block content %}
+<div class="section-header">
+  <h1 class="text-center w-100">📋 O‘quvchilar ro‘yxati</h1>
+</div>
+
+<div class="section-body">
+  <div class="card">
+    <div class="card-header">
+      <h4>O‘quvchilar</h4>
+      <div class="card-header-action">
+        <a href="#" class="btn btn-primary">
+            <i class="bx bx-plus"></i> O'quvchi qo'shish
+        </a>
+      </div>
+    </div>
+
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover mb-0 text-center">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ism</th>
+              <th>Familiya</th>
+              <th>Otasining ismi</th>
+              <th>Telefon raqam</th>
+              <th>Tug‘ilgan sana</th>
+              <th>O‘quv markaz</th>
+              <th>Harakatlar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in students %}
+            <tr>
+              <td>{{ forloop.counter }}</td>
+              <td>{{ student.first_name }}</td>
+              <td>{{ student.last_name }}</td>
+              <td>{{ student.third_name }}</td>
+              <td>{{ student.phone_number }}</td>
+              <td>{{ student.data_birth }}</td>
+              <td>
+                {% for center in student.education_center.all %}
+                  <span class="badge badge-primary">{{ center.name }}</span>
+                {% empty %}
+                  <span class="text-muted">—</span>
+                {% endfor %}
+              </td>
+              <td>
+                  <div>
+                      <a href="#" class="btn btn-warning"><i class="ion-android-create"></i></a>
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="">
+                        <i class="ion-android-delete"></i>
+                      </button>
+                  </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="8" class="text-muted">📭 O‘quvchilar mavjud emas</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
